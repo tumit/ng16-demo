@@ -1,0 +1,19 @@
+<p>signal-demo works!</p>
+fullName: {{ fullName() }}
+<hr />
+<p>
+  First name:
+  <input
+    type="text"
+    #inputFirstName
+    (input)="setFirstName(inputFirstName.value)"
+  />
+</p>
+<p>
+  LastName:
+  <input
+    type="text"
+    #inputLastName
+    (input)="setLastName(inputLastName.value)"
+  />
+</p>
