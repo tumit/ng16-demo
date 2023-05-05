@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { SignalDemoComponent } from './signal-demo/signal-demo.component';
 import { DestroyRefDemoComponent } from './destroy-ref-demo/destroy-ref-demo.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TakeUntilDestroyedDemoComponent } from './take-until-destroyed-demo/take-until-destroyed-demo.component';
+import { TickTadaComponent } from './take-until-destroyed-demo/tick-tada.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignalDemoComponent,
-    DestroyRefDemoComponent
+    DestroyRefDemoComponent,
+    TakeUntilDestroyedDemoComponent,
+    TickTadaComponent
   ],
   imports: [
     BrowserModule,
