@@ -1,0 +1,17 @@
+<p>generic-table works!</p>
+<table>
+  <thead>
+    <tr>
+      <ng-container *ngIf="headerTmpl" [ngTemplateOutlet]="headerTmpl"></ng-container>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of data">
+      <ng-container
+        *ngIf="rowTmpl"
+        [ngTemplateOutlet]="rowTmpl"
+        [ngTemplateOutletContext]="{ $implicit: row }"
+      ></ng-container>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,65 @@
+<p>ng-template-outlet-strict-type-demo works!</p>
+
+<app-generic-table [data]="data">
+  <ng-template #headerTmpl>
+    <th>Abbr</th>
+    <th>Market</th>
+  </ng-template>
+  <ng-template #rowTmpl [typeAs]="data" let-row>
+    <td>{{ row.abbr }}</td>
+    <td>{{ row.market }}</td>
+  </ng-template>
+</app-generic-table>
+
+<hr />
+
+<ng-template #templateRef let-stockAbbr="abbr" let-stockMarket="market">
+  {{ stockAbbr }} in {{ stockMarket }}
+</ng-template>
+<ng-container
+  *ngTemplateOutlet="templateRef; context: { abbr: 'BBL', market: 'SET' }"
+>
+</ng-container>
+<br />
+
+<ng-template #stockTemplateRef let-name>
+  implicit {{ name }} #see just let-name without ="name"
+</ng-template>
+<ng-container
+  *ngTemplateOutlet="stockTemplateRef; context: { $implicit: 'MONO' }"
+>
+</ng-container>
+
+<hr />
+<p>Hello</p>
+<ng-template>
+  <p>World</p>
+</ng-template>
+<p>!!</p>
+<hr />
+<p *ngIf="!loading; else loadingTmpl">Now you see me!</p>
+<hr />
+<ng-template #loadingTmpl> Loading... </ng-template>
+
+<p>Hello</p>
+<p *>World</p>
+<p>!!</p>
+
+<hr />
+
+<ng-template #confidential>
+  <p>It is confidential</p>
+</ng-template>
+
+<div [ngTemplateOutlet]="confidential"></div>
+<ng-container [ngTemplateOutlet]="confidential"></ng-container>
+<ng-template [ngTemplateOutlet]="confidential"></ng-template>
+
+<div style="color: red" *ngIf="loading">
+  <ng-container [ngTemplateOutlet]="confidential"></ng-container>
+</div>
+
+<div style="color: green" *ngIf="!loading">
+  <ng-container [ngTemplateOutlet]="confidential"></ng-container>
+</div>
+

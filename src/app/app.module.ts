@@ -1,14 +1,17 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SignalDemoComponent } from './signal-demo/signal-demo.component';
+import { BindRouterInputDemoComponent } from './bind-router-input-demo/bind-router-input-demo.component';
 import { DestroyRefDemoComponent } from './destroy-ref-demo/destroy-ref-demo.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { GenericTableComponent } from './generic-table/generic-table.component';
+import { NgTemplateOutletStrictTypeDemoComponent } from './ng-template-outlet-strict-type-demo/ng-template-outlet-strict-type-demo.component';
+import { SignalDemoComponent } from './signal-demo/signal-demo.component';
 import { TakeUntilDestroyedDemoComponent } from './take-until-destroyed-demo/take-until-destroyed-demo.component';
 import { TickTadaComponent } from './take-until-destroyed-demo/tick-tada.component';
-import { BindRouterInputDemoComponent } from './bind-router-input-demo/bind-router-input-demo.component';
+import { TypeAsDirective } from './type-as.directive';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,16 @@ import { BindRouterInputDemoComponent } from './bind-router-input-demo/bind-rout
     DestroyRefDemoComponent,
     TakeUntilDestroyedDemoComponent,
     TickTadaComponent,
-    BindRouterInputDemoComponent
+    BindRouterInputDemoComponent,
+    NgTemplateOutletStrictTypeDemoComponent,
+    GenericTableComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TypeAsDirective
   ],
   providers: [],
   bootstrap: [AppComponent]
