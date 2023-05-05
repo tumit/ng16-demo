@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "start:standalone": "ng serve ng16-standalone-demo --port 4400"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,10 @@
+<p>bind-router-input-standalone-demo works!</p>
+
+<p>pathID: {{ pathId ? pathId : "No pathID" }}</p>
+<p>keyword: {{ keyword ? keyword : "No keyword" }}</p>
+<p>title: {{ title ? title : "No title" }}</p>
+
+<dl>
+  <dt>options:</dt>
+  <dd *ngFor="let o of options" [ngStyle]="{ 'color': o }" >- {{ o }}</dd>
+</dl>
