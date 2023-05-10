@@ -32,6 +32,13 @@ const routes: Routes = [
         './directives-composition-demo/directives-composition-demo.component'
       ).then((c) => c.DirectivesCompositionDemoComponent),
   },
+  {
+    path: 'image-directive-demo',
+    loadComponent: () =>
+      import(
+        './image-directive-demo/image-directive-demo.component'
+      ).then((c) => c.ImageDirectiveDemoComponent),
+  },
 ];
 
 @NgModule({
