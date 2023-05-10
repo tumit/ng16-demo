@@ -19,11 +19,18 @@ const routes: Routes = [
     path: 'bind-router-input-demo/:id',
     component: BindRouterInputDemoComponent,
     data: { title: 'My title' },
-    resolve: { options: optionsResolveFn }
+    resolve: { options: optionsResolveFn },
   },
   {
     path: 'ng-template-outlet-strict-type-demo',
     component: NgTemplateOutletStrictTypeDemoComponent,
+  },
+  {
+    path: 'directives-composition-demo',
+    loadComponent: () =>
+      import(
+        './directives-composition-demo/directives-composition-demo.component'
+      ).then((c) => c.DirectivesCompositionDemoComponent),
   },
 ];
 

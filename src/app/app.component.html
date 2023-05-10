@@ -1,10 +1,12 @@
 <ul>
-  <li routerLink="/signal-demo" >Signal Demo</li>
-  <li routerLink="/destroy-ref-demo" >DestroyRef Demo</li>
-  <li routerLink="/take-until-destroyed-demo" >TakeUntilDestroyed Demo</li>
-  <li routerLink="/bind-router-input-demo" >BindRouterInput Demo</li>
-  <li routerLink="/bind-router-input-demo/1" [queryParams]="{ keyword: 'BindRouterInput Demo With ID' }" >BindRouterInput Demo With ID</li>
-  <li routerLink="/ng-template-outlet-strict-type-demo" >ngTemplateOutletStrictType Demo</li>
+  <li routerLink="/signal-demo" highlight color="blue">Signal Demo</li>
+  <li routerLink="/destroy-ref-demo" highlight>DestroyRef Demo</li>
+  <li routerLink="/take-until-destroyed-demo" highlight>TakeUntilDestroyed Demo</li>
+  <li routerLink="/bind-router-input-demo" highlight>BindRouterInput Demo</li>
+  <li routerLink="/bind-router-input-demo/1" [queryParams]="{ keyword: 'BindRouterInput Demo With ID' }" highlight>BindRouterInput Demo With ID</li>
+  <li routerLink="/ng-template-outlet-strict-type-demo" highlight>ngTemplateOutletStrictType Demo</li>
+  <menu-item [menuItem]="{ link: '/directives-composition-demo', label: 'DirectivesComposition' }" ></menu-item>
+  <li highlightAndBorder>highlightAndBorder</li>
 </ul>
 <hr>
 <router-outlet></router-outlet>
