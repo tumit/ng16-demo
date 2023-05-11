@@ -1,5 +1,7 @@
 <p>signal-demo works!</p>
-fullName: {{ fullName() }}
+fullName: {{ fullName() }}<br>
+fullName: {{ firstName() }} {{ lastName() }}<br>
+fullName: {{ fullNameX }}
 <hr />
 <p>
   First name:
@@ -8,6 +10,14 @@ fullName: {{ fullName() }}
     #inputFirstName
     (input)="setFirstName(inputFirstName.value)"
     enOnly
+  />
+</p>
+<p>
+  Middle name: {{ middleName }}
+  <input
+    type="text"
+    #inputMiddleName
+    (input)="setMiddleName(inputMiddleName.value)"
   />
 </p>
 <p>

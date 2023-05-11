@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SignalDemoComponent } from './signal-demo/signal-demo.component';
 import { DestroyRefDemoComponent } from './destroy-ref-demo/destroy-ref-demo.component';
@@ -6,6 +6,9 @@ import { TakeUntilDestroyedDemoComponent } from './take-until-destroyed-demo/tak
 import { BindRouterInputDemoComponent } from './bind-router-input-demo/bind-router-input-demo.component';
 import { optionsResolveFn } from './bind-router-input-demo/options.resolver';
 import { NgTemplateOutletStrictTypeDemoComponent } from './ng-template-outlet-strict-type-demo/ng-template-outlet-strict-type-demo.component';
+import { AuthService } from './auth.service';
+import { tap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'signal-demo', component: SignalDemoComponent },
@@ -38,6 +41,17 @@ const routes: Routes = [
       import(
         './image-directive-demo/image-directive-demo.component'
       ).then((c) => c.ImageDirectiveDemoComponent),
+  },
+  {
+    path: 'routing-fn-demo',
+    canActivate: [() => inject(AuthService).isAdmin().pipe(tap(b => {
+      if (!b) {
+        alert('Not Admin')
+      }
+    }))],
+    // resolve: [{ options: ()=> inject(HttpClient).get<string[]>('/assets/json/colors.json') }],
+    loadComponent: () =>
+      import('./routing-fn-demo/routing-fn-demo.component')
   },
 ];
 

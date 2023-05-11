@@ -12,8 +12,9 @@ import { Component } from '@angular/core';
       provide: IMAGE_LOADER,
       useValue: (config: ImageLoaderConfig) =>  {
         console.log(config)
-        const size = config?.width ? config.width + '-' : '';
-        return `http://localhost:4200/assets/img/${size}${config.src}`
+        const name = config.src.replace('.jpg', '')
+        const size = config?.width ? 'w_' + config.width : 'w_200';
+        return `/assets/img/${name},${size}.jpg`
       }
     }
 

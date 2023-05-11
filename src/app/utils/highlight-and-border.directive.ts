@@ -10,7 +10,10 @@ import { BorderDirective } from './border.directive';
       directive: HighlightDirective,
       inputs: ['color: highlightColor']
     },
-    BorderDirective,
+    {
+      directive: BorderDirective,
+      inputs: ['color: borderColor']
+    },
   ],
 })
 export class HighlightAndBorderDirective {

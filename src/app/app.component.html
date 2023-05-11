@@ -1,12 +1,16 @@
 <ul>
   <li routerLink="/signal-demo" highlight color="blue">Signal Demo</li>
-  <li routerLink="/destroy-ref-demo" highlight>DestroyRef Demo</li>
+  <li routerLink="/destroy-ref-demo" highlightAndBorder highlightColor="pink">DestroyRef Demo</li>
   <li routerLink="/take-until-destroyed-demo" highlight>TakeUntilDestroyed Demo</li>
   <li routerLink="/bind-router-input-demo" highlight>BindRouterInput Demo</li>
   <li routerLink="/bind-router-input-demo/1" [queryParams]="{ keyword: 'BindRouterInput Demo With ID' }" highlight>BindRouterInput Demo With ID</li>
   <li routerLink="/ng-template-outlet-strict-type-demo" highlight>ngTemplateOutletStrictType Demo</li>
   <menu-item [menuItem]="{ link: '/directives-composition-demo', label: 'DirectivesComposition' }" ></menu-item>
-  <menu-item [menuItem]="{ link: '/image-directive-demo', label: 'ImageDirective' }" ></menu-item>
+  <menu-item [menuItem]="{ link: '/image-directive-demo', label: 'ImageDirective' }" />
+  <menu-item [menuItem]="{ link: '/routing-fn-demo', label: 'RoutingFn' }" />
 </ul>
 <hr>
+
+role: <input type="text" #inputRole (input)="setRole(inputRole.value)">
+
 <router-outlet></router-outlet>

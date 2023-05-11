@@ -19,4 +19,7 @@ export interface MenuIem {
 export class MenuItemComponent {
   @Input()
   menuItem!: MenuIem;
+
+  // @Input({required: true })
+  // name!: string;
 }

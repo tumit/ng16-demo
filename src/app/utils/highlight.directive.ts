@@ -14,7 +14,6 @@ export class HighlightDirective {
 
   @HostListener('mouseenter')
   addHighlight(): void {
-    console.log('color',this.color)
     this.setHighlight(this.color);
   }
 
